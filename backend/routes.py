@@ -8,5 +8,3 @@ def get_friend():
     result = [friend.to_json() for friend in friends]
     return jsonify(result)
 
-
-#26:57
