@@ -10,5 +10,21 @@ def get_friend():
     return jsonify(result)
 
 # Create a friend
+@app.route("/api/friends", methods=["POST"])
+def create_friend():
+    try:
+        data: request.json
 
+        name = data.get("name")
+        role = data.get("role")
+        description = data.get("description")
+        gender = data.get("gender")
 
+        # Fetch avatar image based on gender
+        if gender == "male":
+            img_url =  f"https://avatar.iran.liara.run/public/boy?username={name}"
+        elif gender == "female":
+            img_url = f"https://avatar.iran.liara.run/public/girl?username={name}"
+        else:
+            img_url = None
+        #35:30
