@@ -19,4 +19,3 @@ class Friend(db.Model):
       "imgUrl":self.img_url,
     }
 
- #42:11
