@@ -2,6 +2,7 @@ from app import app, db
 from flask import request, jsonify
 from models import Friend
 
+# CRUD
 # Get all friends
 @app.route("/api/friends", methods=["GET"])
 def get_friends():
@@ -88,4 +89,4 @@ def update_profile(id):
       db.session.rollback()
       return jsonify({"error":str(e)}),500
    
- 
+#1:00 
