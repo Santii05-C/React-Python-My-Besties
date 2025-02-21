@@ -89,4 +89,3 @@ def update_profile(id):
       db.session.rollback()
       return jsonify({"error":str(e)}),500
    
-#1:00 
