@@ -1,7 +1,8 @@
+import { Button } from "@chakra-ui/react";
 function App() {
   return (
     <>
-      <h1>hollo</h1>
+      <Button>hola</Button>
     </>
   );
 }
