@@ -1,5 +1,13 @@
-import { Box, Button, Container, Flex, Text } from "@chakra-ui/react";
-import { useColorMode } from "../components/ui/color-mode";
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Text,
+  useColorMode,
+  useColorModeValue,
+} from "@chakra-ui/react";
+
 import { IoMoon } from "react-icons/io5";
 import { LuSun } from "react-icons/lu";
 
@@ -8,7 +16,12 @@ const Navbar = () => {
 
   return (
     <Container maxW={"900px"}>
-      <Box px={4} my={4} borderRadius={5} bg={"gray.700"}>
+      <Box
+        px={4}
+        my={4}
+        borderRadius={5}
+        bg={useColorModeValue("gray.200", "gray.700")}
+      >
         <Flex h="16" alignItems={"center"} justifyContent={"space-between"}>
           <Flex
             alignItems={"center"}
@@ -42,5 +55,5 @@ const Navbar = () => {
     </Container>
   );
 };
-//1:18
+
 export default Navbar;
