@@ -1,9 +1,14 @@
 import { Box, Button, Container, Flex, Text } from "@chakra-ui/react";
+import { useColorMode } from "../components/ui/color-mode";
+import { IoMoon } from "react-icons/io5";
+import { LuSun } from "react-icons/lu";
 
 const Navbar = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Container maxW={"900px"}>
-      <Box px={4} my={4} borderRadius={5}>
+      <Box px={4} my={4} borderRadius={5} bg={"gray.700"}>
         <Flex h="16" alignItems={"center"} justifyContent={"space-between"}>
           <Flex
             alignItems={"center"}
@@ -18,11 +23,24 @@ const Navbar = () => {
 
             <img src="/explode.png" alt="Explode head" width={45} height={45} />
           </Flex>
-          <Flex gap={3} alignItems={"center"}></Flex>
+          <Flex gap={3} alignItems={"center"}>
+            <Text
+              fontSize={"lg"}
+              fontWeight={500}
+              display={{ base: "none", md: "block" }}
+            >
+              BFFship 🔥
+            </Text>
+
+            <Button onClick={toggleColorMode}>
+              {colorMode === "light" ? <IoMoon /> : <LuSun size={20} />}
+            </Button>
+            {/* <CreateUserModal setUsers={setUsers} /> */}
+          </Flex>
         </Flex>
       </Box>
     </Container>
   );
 };
-
+//1:18
 export default Navbar;
