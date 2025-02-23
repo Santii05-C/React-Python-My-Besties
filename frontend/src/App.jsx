@@ -1,10 +1,11 @@
 import Navbar from "./components/Navbar";
 import { Container, Stack, Text } from "@chakra-ui/react";
+import UserGrid from "./components/UserGrid";
 function App() {
   return (
     <Stack minH={"100vh"}>
       <Navbar />
-      <Container maxH={"1200"} my={4}>
+      <Container maxW={"1200px"} my={4}>
         <Text
           fontSize={{ base: "3xl", md: "50" }}
           fontWeight={"bold"}
@@ -22,6 +23,8 @@ function App() {
           </Text>
           🚀
         </Text>
+
+        <UserGrid />
       </Container>
     </Stack>
   );
