@@ -25,7 +25,6 @@ const CreateUserModal = () => {
       <Button onClick={onOpen}>
         <BiAddToQueue size={20} />
       </Button>
-
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
