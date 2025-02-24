@@ -11,6 +11,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { BiTrash } from "react-icons/bi";
+import EditModal from "./EditModal";
 
 const UserCard = ({ user }) => {
   return (
@@ -27,7 +28,7 @@ const UserCard = ({ user }) => {
           </Flex>
 
           <Flex>
-            {/* <EditModal user={user} setUsers={setUsers} /> */}
+            <EditModal />
             <IconButton
               variant="ghost"
               colorScheme="red"

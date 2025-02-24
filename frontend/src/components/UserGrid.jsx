@@ -1,8 +1,9 @@
 import { Grid } from "@chakra-ui/react";
 import { USERS } from "../dummy/dummy";
 import UserCard from "./UserCard";
+import { useState } from "react";
 
-const UserGrid = () => {
+const UserGrid = ({ users }) => {
   return (
     <>
       <Grid
