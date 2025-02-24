@@ -26,7 +26,7 @@ function App() {
           🚀
         </Text>
 
-        <UserGrid users={users} />
+        <UserGrid users={users} setUsers={setUsers} />
       </Container>
     </Stack>
   );
