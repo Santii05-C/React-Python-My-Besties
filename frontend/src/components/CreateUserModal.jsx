@@ -81,14 +81,33 @@ const CreateUserModal = () => {
 
             <RadioGroup mt={4}>
               <Flex gap={5}>
-                <Radio value="male">Male</Radio>
-                <Radio value="female">Female</Radio>
+                <Radio
+                  value="male"
+                  onChange={(e) =>
+                    setInputs({ ...inputs, gender: e.target.value })
+                  }
+                >
+                  Male
+                </Radio>
+                <Radio
+                  value="female"
+                  onChange={(e) =>
+                    setInputs({ ...inputs, gender: e.target.value })
+                  }
+                >
+                  Female
+                </Radio>
               </Flex>
             </RadioGroup>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3}>
+            <Button
+              colorScheme="blue"
+              mr={3}
+              type="submit"
+              isLoading={isLoading}
+            >
               Add
             </Button>
             <Button onClick={onClose}>Cancel</Button>
