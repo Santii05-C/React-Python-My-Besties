@@ -15,9 +15,11 @@ import {
   RadioGroup,
   Textarea,
   useDisclosure,
+  useToast,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { BiAddToQueue } from "react-icons/bi";
+import { BASE_URL } from "../App";
 
 const CreateUserModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -28,6 +30,51 @@ const CreateUserModal = () => {
     description: "",
     gender: "",
   });
+
+  const handleCreateUser = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      const res = await fetch(BASE_URL + "/friends", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(inputs),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error);
+      }
+
+      toast({
+        status: "success",
+        title: "Yayy! 🎉",
+        description: "Friend created successfully.",
+        duration: 2000,
+        position: "top-center",
+      });
+      onClose();
+      setUsers((prevUsers) => [...prevUsers, data]);
+
+      setInputs({
+        name: "",
+        role: "",
+        description: "",
+        gender: "",
+      }); // clear inputs
+    } catch (error) {
+      toast({
+        status: "error",
+        title: "An error occurred.",
+        description: error.message,
+        duration: 4000,
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <>
