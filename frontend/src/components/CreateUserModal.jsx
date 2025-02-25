@@ -21,7 +21,7 @@ import { useState } from "react";
 import { BiAddToQueue } from "react-icons/bi";
 import { BASE_URL } from "../App";
 
-const CreateUserModal = () => {
+const CreateUserModal = ({ setUsers }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isLoading, setIsLoading] = useState(false);
   const [inputs, setInputs] = useState({
@@ -30,6 +30,8 @@ const CreateUserModal = () => {
     description: "",
     gender: "",
   });
+
+  const toast = useToast();
 
   const handleCreateUser = async (e) => {
     e.preventDefault();
