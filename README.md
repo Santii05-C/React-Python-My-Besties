@@ -14,6 +14,10 @@ Build a Friend Store with Python(Flask) and JavaScript(React)
 - 🌓 Light and Dark Mode: Enjoy a personalized user interface experience with light and dark mode options.
 - 📱 Responsive Design: The app is designed to adapt to various screen sizes, ensuring a consistent experience across devices.
 
+# Try the app
+
+¡Click [here](https://tuaplicacion.com) to try the application!
+
 ### Run the App Locally
 
 1. Navigate to the project directory:
