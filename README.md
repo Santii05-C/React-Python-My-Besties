@@ -16,7 +16,7 @@ Build a Friend Store with Python(Flask) and JavaScript(React)
 
 # Try the app
 
-¡Click [here](https://tuaplicacion.com) to try the application!
+¡Click [here](https://react-python-my-besties.onrender.com/) to try the application!
 
 ### Run the App Locally
 
